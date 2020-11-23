@@ -16,6 +16,26 @@ public class Question5 {
   }
 
   public static void reverseStack(Stack inStack) {
-
+    Queue tempQ = new Queue();
+    while(!inStack.isEmpty()){
+      tempQ.enqueue(inStack.pop());
+    }
+    while(!tempQ.isEmpty()){
+      inStack.push(tempQ.dequeue());
+    }
+    /*
+     ** Both are correct
+     *
+    Stack tempS1 = new Stack();
+    while(!inStack.isEmpty()){
+      tempS1.push(inStack.pop());
+    }
+    Stack tempS2 = new Stack();
+    while(!tempS1.isEmpty()){
+      tempS2.push(tempS1.pop());
+    }
+    while(!tempS2.isEmpty()){
+      inStack.push(tempS2.pop());
+    }*/
   }
 }
